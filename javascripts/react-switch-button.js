@@ -27,7 +27,6 @@ var SwitchButton = React.createClass( {
     title          : React.PropTypes.string,
     label          : React.PropTypes.string,
     label_right    : React.PropTypes.string,
-    defaultChecked : React.PropTypes.string,
     theme          : React.PropTypes.string,
     checked        : React.PropTypes.string,
     onChange       : React.PropTypes.func
@@ -37,7 +36,7 @@ var SwitchButton = React.createClass( {
   /**
    * Default propos.
    *
-   * @returns {{id: string, name: string, title: string, label: string, label_right: string, defaultChecked: string, theme: string, checked: null, onChange: *}}
+   * @returns {{id: string, name: string, title: string, label: string, label_right: string, theme: string, checked: null, onChange: *}}
    */
   getDefaultProps : function()
   {
@@ -47,7 +46,6 @@ var SwitchButton = React.createClass( {
       title          : '',
       label          : '',
       label_right    : '',
-      defaultChecked : '',
       theme          : 'rsbc-switch-button-flat-round',
       checked        : null,
       onChange       : this.hadleChange
@@ -87,7 +85,7 @@ var SwitchButton = React.createClass( {
     return (
       <div className={'rsbc-switch-button ' + this.props.theme }>
         {label}
-        <input onChange={this.props.onChange} checked={this.props.checked} defaultChecked={this.props.defaultChecked} id={id} name={this.props.name} type="checkbox" value="1" />
+        <input onChange={this.props.onChange} checked={this.props.checked} id={id} name={this.props.name} type="checkbox" value="1" />
         <label htmlFor={id}></label>
         {label_right}
       </div>
